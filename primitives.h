@@ -6,8 +6,6 @@
 #define RAYTR_BASIC_OBJECTS_H
 
 #include "objekt.h"
-// FIXME: refactor this!
-#include "mesh.h"
 
 class Sphere: public Primitive
 {
@@ -180,10 +178,6 @@ inline Primitive* CreateBasicObject (const json &json_)
 	else if (type == "rectangle" || type == "rect")
 	{
 		ret = Rectangle::Create(json_);
-	}
-	else if (type == "mesh")
-	{
-		ret = Mesh::Create(json_);
 	}
 	else
 		assert(false);
